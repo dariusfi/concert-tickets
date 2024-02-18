@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    Bestellung erfolgreich storniert. Falls Sie Ihre Bestellung bereits bezahlt haben, 
+    bekommen Sie den Betrag zurückerstattet.
+    <a href="{% url 'create_order' %}">Neue Bestellung aufgeben.</a>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Verkaufte Karten</h2>
+  <p>Es werden nur aktive Konzerte angezeigt.</p>
+  {% for event in event_infos %}
+    <h4 class="mt-4">{{ event.name }}</h4>
+    <p>Verkaufte Karten Vollpreis: {{ event.regular_sold }}</p>
+    <p>Verkaufte Karten Ermäßigt: {{ event.discount_sold }}</p>
+    <p>Stornierte Karten Vollpreis: {{ event.regular_deleted }}</p>
+    <p>Stornierte Karten Ermäßigt: {{ event.discount_deleted }}</p>
+    <p><b>Verkaufte Karten Insgesamt: {{ event.total_sold }}</b></p>
+    <p>Kapazität Konzertsaal: {{ event.max_number_tickets }}</p>
+    <p>Verbleibende Tickets: {{ event.remaining_tickets }}</p>
+  {% endfor %}
+  <h2 class="mt-5">Aktionen</h2>
+  <a href="{% url 'upload_statement' %}" target="_blank"><button class="primary-button mt-2 me-2">Kontoauszug hochladen</button></a>
+  <a href="{% url 'payment_reminder' %}" target="_blank"><button class="primary-button mt-2 me-2">Zahlungserinnerungen senden</button></a>
+  <a href="{% url 'admin:index' %}" target="_blank"><button class="primary-button mt-2">Datenbank einsehen</button></a>
+{% endblock %}

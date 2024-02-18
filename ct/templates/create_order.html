@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div>
+    <img class="center-block logo" src="{% static 'ct/logo.svg' %}" alt="Logo" />
+    <h2 class="mt-5 mb-3 text-center">Konzertkarten bestellen</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <div id="create_order_button_description">Die Zahlung erfolgt ausschließlich auf 
+        Rechnung. Sie bekommen die Rechnung zusammen mit den Tickets nach dem Klick auf 
+        "Kostenpflichtig bestellen" per E-Mail zugesendet.</div>
+      <input class="mt-4 primary-button center-block" type="submit" value="Kostenpflichtig bestellen" />
+    </form>
+  </div>
+{% endblock %}

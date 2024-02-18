@@ -1,0 +1,80 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    max-width: 100%;
+    /* Ensure the logo does not exceed its original size */
+    height: auto;
+    /* Maintain the aspect ratio when resizing */
+}
+
+.background {
+    padding: 40px;
+    /* Orange gradient */
+    background: linear-gradient(to bottom, rgba(239, 136, 76, 1) 0%, rgba(221, 66, 42, 1) 100%);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    /* White with transparency */
+    background: rgba(255, 255, 255, 0.75);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+}
+
+.primary-button {
+    background: rgba(221, 66, 42, 1);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+
+    /* Allow text to wrap */
+    white-space: normal;
+}
+
+.primary-button:hover {
+    background: rgba(239, 136, 76, 1);
+}
+
+/* Media query for screens with a maximum width of 600px (typical for mobile devices) */
+@media screen and (max-width: 600px) {
+    .background {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.center-block {
+    display: block;
+    margin: 0 auto;
+}
+
+#footer {
+    margin-top: 30px;
+    margin-bottom:30px;
+    text-align: center;
+    color: #ffffff;
+    flex-shrink: 0;
+    height: 10px;
+}
+
+#footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#create_order_button_description {
+    color: #898989;
+}

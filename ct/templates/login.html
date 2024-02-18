@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div>
+    <h2>Login</h2>
+    <form action="/login/" method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <!-- Go to dashboard after login -->
+      <input type="hidden" name="next" value="/">
+      <input class="mt-4 primary-button center-block" type="submit" value="Login" />
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <h2>Zahlungserinnerungen verschicken</h2>
+  <p>Bitte vor dem Versenden der Zahlungserinnerung einen aktuellen Kontoauszug ins System laden. Anschließend sollte überprüft werden, ob nicht zuordenbare Zahlungen manuell zugeordnet werden können und als bezahlt in die Datenbank eingetragen werden können. Bei Zahlungen mit dem falschen Betrag wurde möglicherweise eine separate Nachzahlung eingereicht. In diesem Fall ebenfalls die Bestellung manuell als bezahlt markieren. Die Zahlungserinnerungen werden automatisch an alle Bestellungen versendet, die länger als die angegebene Zahlungsfrist zurückliegen und für die noch kein Geld eingegangen ist (und nicht bereits eine Erinnerung geschickt wurde).</p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button class="primary-button" type="submit">Zahlungserinnerungen senden</button>
+  </form>
+{% endblock %}

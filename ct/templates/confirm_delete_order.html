@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    Wollen Sie wirklich Ihre Bestellung stornieren? Ihre Tickets verlieren danach ihre Gültigkeit, 
+    unabhängig davon, ob sie schon bezahlt wurden, oder zukünftig noch bezahlt werden. Falls Sie
+    den Rechnungsbetrag bereits überwiesen haben, wird Ihnen dieser zurückerstattet.
+    <form action="" method="post">
+        {% csrf_token %}
+        <input class="mt-4 primary-button center-block" type="submit" value="Bestellung stornieren" />
+      </form> 
+</div>
+{% endblock %}

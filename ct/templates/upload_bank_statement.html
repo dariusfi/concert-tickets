@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% block content %}
+<h2>Bankauszug hochladen</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button class="primary-button" type="submit">Kontoauszug Hochladen und Report Herunterladen</button>
+    </form>
+{% endblock %}
