@@ -1,4 +1,3 @@
-
 # Setup AWS Lightsail
 These instructions have been taken from https://docs.bitnami.com/aws/infrastructure/django/get-started/deploy-django-project/
 
@@ -22,7 +21,7 @@ ssh bitnami@<aws-lightsail-static-ip>
 
 This is a convenient way to upload your changes to AWS by simply typing `git push prod` from your local development environment.
 
-After connecting to the AWS server via ssh, create a new ct-git directory here:
+After connecting to the AWS server via ssh, create directories for the git repository, and the main project.
 
 ```
 sudo mkdir /opt/bitnami/projects/ct_git
@@ -72,8 +71,6 @@ done
 Make this file executable:
 
 `chmod +x hooks/post-receive`
-
-Note: we don't use a venv for Python, as that got into conflicts with Apache. 
 
 Configure git locally to point to this repository:
 
