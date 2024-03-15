@@ -1,4 +1,4 @@
-from ct.constants import DELETE_ORDER_DAYS_BEFORE_CONCERT
+from ct.constants import DELETE_ORDER_DAYS_BEFORE_CONCERT, SENDER_EMAIL
 from ct.display.forms import BankStatementForm, CreateOrderForm
 from ct.logic.bank_statement import process_bank_statement
 from ct.logic.customer import add_to_newsletter
@@ -55,9 +55,9 @@ def create_order_view(request: HttpRequest) -> HttpResponse:
                 "generic_message.html",
                 {
                     "message": (
-                        "Bestellung erfolgreich! Sie erhalten eine Email mit der Rechnung "
-                        "und Ihren Tickets. Bitte melden Sie sich bei karten@akademische-philharmonie.de, "
-                        "wenn die Email nicht ankommen sollte."
+                        "Bestellung erfolgreich! Sie erhalten in Kürze eine Bestellbestätigung, sowie die "
+                        f"Rechnung und Ihre Tickets per Email. Bitte melden Sie sich bei {SENDER_EMAIL}, "
+                        "wenn die Emails nicht innerhalb von 20 Minuten ankommen sollten."
                     )
                 },
             )
